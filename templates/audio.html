@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Impact</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <!-- <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Impact - v1.1.1
+    * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+    <style>
+        div {text-align: center;}
+        h5 {color: black;}
+        label {text-align: center; margin-bottom: 20px; font-weight: 600;}
+        button {text-align: center; margin-top: 15px; font-size: 16px;}
+        .button {border: none; padding: 15px 32px; text-align: center;
+                text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px;}  
+        .center {margin: auto; width: 50%; padding: 20px;}
+        .txt {text-align:center;}
+        .form-control {width: 300px}
+        #bottom {position: absolute; bottom: 0; right: 0;}
+        .num {margin-right: 15px;}
+    </style>
+
+    <header id="header" class="header d-flex align-items-center">
+
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>Impact<span>.</span></h1>
+            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('index') }}#about">About</a></li>
+                    <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                    <li><a href="{{ url_for('text') }}">Twitter Model</a></li>
+                    <li><a href="{{ url_for('audio_page') }}">Audio Model</a></li>
+                    <li><a href="{{ url_for('index') }}#team">Team</a></li>
+                    <li><a href="{{ url_for('index') }}#faq">FAQ</a></li>
+                    <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+        </div>
+    </header><!-- End Header -->
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero" style="height: 100vh;">
+        <div class="container position-relative">
+            <div class="row gy-5" data-aos="fade-in">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+                    <h2>Submit<span> Your Audio Recording</span></h2>
+                    <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8080/audio">
+                        <span><p>Answer the questions on your right and record yourself.</p></span>
+                        <input type="file" accept="audio/*" class="form-control" id="audioFileChooser" name="file" >
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">Predict</button>
+                    </form>
+                    <span style="margin-top:15px;"><p>{{res}}</p></span>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+
+                    <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                            <span class="num">1.</span>
+                            For how long do you find little interest or pleasure in doing things?
+                            </button>
+                        </h3>
+                        <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Your possible answers include: not at all, for several days, for more than half days, nearly everyday, etc.
+                            </div>
+                        </div>
+                        </div><!-- # Faq item-->
+        
+                        <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                            <span class="num">2.</span>
+                            In the past two weeks, how often have you felt down, depressed, or hopeless?
+                            </button>
+                        </h3>
+                        <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Your possible answers include: Not at all, several days, more than half the days, or nearly every day. Feeling down for more than half the days or nearly every day over the past two weeks suggests depression.
+                            </div>
+                        </div>
+                        </div><!-- # Faq item-->
+        
+                        <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                            <span class="num">3.</span>
+                            Have you had any thoughts of suicide?
+                            </button>
+                        </h3>
+                        <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                you can answer as follows: Never, some thoughts of death, some thoughts of suicide, or some attempt at suicide.
+                            </div>
+                        </div>
+                        </div><!-- # Faq item-->
+        
+                        <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                            <span class="num">4.</span>
+                            How is your sleep?
+                            </button>
+                        </h3>
+                        <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Answers include: Sleeping as usual, slight difficulty, sleep reduced by at least two hours, or getting less than three hours of sleep at night. Greater sleep disturbance signals a greater risk for depression.
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                                <span class="num">5.</span>
+                                How is your energy?
+                                </button>
+                            </h3>
+                            <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    Possible answers to this question include: As much energy as ever, less energy than before, not enough to do much, or not enough to do anything.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-6">
+                                <span class="num">6.</span>
+                                Do you prefer to stay at home rather than going out and doing new things?
+                                </button>
+                            </h3>
+                            <div id="faq-content-6" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    This question asks for a yes or no answer and recognizes that isolation and withdrawal are common signs of depression — especially in the elderly.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-7">
+                                <span class="num">7.</span>
+                                Do you feel physical pain anywhere in your body?
+                                </button>
+                            </h3>
+                            <div id="faq-content-7" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    This question asks for a yes or no answer and mentioning the part of your body which pains, for example, backpain, headache, joint pain, limb problem, gut problems, etc.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-8">
+                                <span class="num">7.</span>
+                                Mention any current situation which is bothering you.
+                                </button>
+                            </h3>
+                            <div id="faq-content-8" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    You can answer this with any personal situation which you are finding hard to face.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- # Faq item-->
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End Hero Section -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/aos/aos.js"></script>
+    <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../static/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
